@@ -4,11 +4,11 @@ const userSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Please add a name"],
+      required: [true, "Please add name"],
     },
     email: {
       type: String,
-      required: [true, "Please add a email"],
+      required: [true, "Please add email"],
       unique: true,
       trim: true,
       match: [
@@ -18,18 +18,18 @@ const userSchema = mongoose.Schema(
     },
     password: {
       type: String,
-      required: [true, "Please add a password"],
+      required: [true, "Please add password"],
       minLength: [6, "Password must be up to 6 characters"],
-      maxLength: [23, "Password must not be more than 23 characters"],
+      maxLength: [23, "Password must not more than 23 characters"],
     },
     photo: {
       type: String,
-      required: [true, "Please add image"],
+      required: [true, "Please add a photo"],
       default: "https://www.w3schools.com/howto/img_avatar.png",
     },
     phone: {
       type: String,
-      default: "+234",
+      default: "+123",
     },
     bio: {
       type: String,
@@ -43,4 +43,5 @@ const userSchema = mongoose.Schema(
 );
 
 const User = mongoose.model("User", userSchema);
+
 module.exports = User;
